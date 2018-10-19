@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>效果图展示</title>
+		<meta name="viewport" content="initial-scale=1.0" />
+		<link rel="stylesheet" href="./public/example.css" />
+	</head>
+
+	<body>
+		<div id="content">
+			<div>测试</div>
+			<div id="container"></div>
+		</div>
+		<script src="./src/three.min.js"></script>
+		<script src="./src/sphoords.js"></script>
+		<script src="./src/PhotoSphereViewer.js"></script>
+		<script src="./src/PSVNavBar.js"></script>
+		<script src="./src/PSVNavBarButton.js"></script>
+
+		<!-- Test script -->
+
+		<script>
+		    var loader = document.createElement('div');
+			loader.className = 'loader';
+
+			var div = document.getElementById('container');
+			//div.style.height = '30px';
+
+			PSV = new PhotoSphereViewer({
+				// Path to the panorama
+				panorama: 'public/snow.jpg',
+
+				// Container
+				container: div,
+
+				// Deactivate the animation
+				//time_anim: false,
+
+				// Display the navigation bar
+				navbar: true,
+
+				// Resize the panorama
+				size: {
+					width: '70%',
+					height: '50%'
+				},
+
+				// HTML loader
+				loading_html: loader,
+
+				// Disable smooth moves to test faster
+				smooth_user_moves: false
+			});
+		</script>
+	</body>
+
+</html>
